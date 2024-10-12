@@ -28,7 +28,7 @@ app.use('/property', propertyRoute);
 app.listen(PORT, async() => {
     try {
         await connection;
-        console.log(`server started at port ${PORT}`)
+        console.log(`server started at port ${PORT}`);
     } catch (error) {
         console.log(error);
     }
