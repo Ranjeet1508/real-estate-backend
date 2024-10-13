@@ -9,13 +9,15 @@ const PORT = process.env.PORT;
 
 const app = express();
 
+app.use(cors({
+    origin: "*"
+}))
+
 app.use(express.json());
 
 app.use(express.urlencoded({extended: true}))
 
-app.use(cors({
-    origin: "*"
-}))
+
 
 app.get('/', (req, res) => {
     res.send("welcome to the backend of real estate")
