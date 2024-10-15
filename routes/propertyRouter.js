@@ -7,7 +7,8 @@ const propertyRoute = express.Router();
 propertyRoute.get('/', async (req, res) => {
     try {
         const properties = await PropertyModel.find(); // Fetch all properties from MongoDB
-        return res.status(200).json(properties);
+        const reversed_properties = properties.reverse();
+        return res.status(200).json(reversed_properties);
     } catch (err) {
         return res.status(500).json({ message: 'Server Error', error: err.message });
     }
